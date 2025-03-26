@@ -1,0 +1,18 @@
+.form-container {
+    margin-bottom: 20px;
+  }
+  
+  .form-group {
+    margin-bottom: 10px;
+  }
+  
+  label {
+    display: block; /* Make labels block elements to appear on separate lines */
+    margin-bottom: 5px; /* Add some space between labels and inputs */
+  }
+  
+  input[type='text'],
+  input[type='number'] {
+    padding: 5px;
+    display: block; /* Make inputs block elements to appear on separate lines */
+  }

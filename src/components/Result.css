@@ -1,0 +1,14 @@
+.result-container{
+    display: flex;
+    flex-direction: column;
+}
+.result-container p { 
+    margin: 10px 0;            /* Example margin for the paragraphs */
+    font-weight: bold;
+    font-size: large;
+}
+
+.quantity 
+{
+    
+}

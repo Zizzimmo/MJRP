@@ -1,0 +1,99 @@
+// Sleek.js
+import React, { useState } from 'react';
+import './Sleek.css';
+import { FaPlus, FaTrashAlt } from 'react-icons/fa';
+import Item from './Item';
+
+const Sleek = ({ index, sendDataToBackend }) => {
+  const [itemCount, setItemCount] = useState(1);
+
+  const handleAddItem = () => {
+    setItemCount(prevCount => prevCount + 1);
+  };
+
+  const handleDeleteItem = () => {
+    setItemCount(prevCount => Math.max(prevCount - 1, 0));
+  };
+
+  const gatherDataAndSend = () => {
+    const sleekData = {
+      index,
+      items: []
+    };
+
+    // Loop through each item to gather data
+    for (let i = 0; i < itemCount; i++) {
+      const itemData = {
+        productID: document.getElementById(`productID${i}`).value,
+        demand: document.getElementById(`demand${i}`).value,
+        minorSetupCost: document.getElementById(`minorSetupCost${i}`).value,
+        orderingCost: document.getElementById(`orderingCost${i}`).value
+      };
+
+      console.log('Item data:', itemData);
+
+      sleekData.items.push(itemData); // Add item data to sleekData
+    }
+
+    // Call sendDataToBackend function passed from Main component
+    sendDataToBackend(sleekData);
+  };
+
+  return (
+    <div className="container">
+      <div className="item-container">
+        <div className="form-container">
+          <h2>Add Buyer</h2>
+        </div>
+        <div className="sleek-list">
+          {[...Array(itemCount)].map((_, index) => (
+            <Item
+              key={index}
+              index={index}
+              id={`item${index}`}
+            />
+          ))}
+        </div>
+        <div className="button-container">
+          <button className="add-button" onClick={handleAddItem} type="button">
+            <FaPlus />
+          </button>
+          <button className="delete-button" onClick={handleDeleteItem} type="button">
+            <FaTrashAlt />
+          </button>
+        </div>
+      </div>
+      {/* <button onClick={gatherDataAndSend}>Send Data</button> Button to send data to backend */}
+    </div>
+  );
+};
+
+export default Sleek;
+
+
+<form>
+            <div className="form-group">
+              <label htmlFor="buyerName">Buyer ID:</label>
+              <input type="number" id="buyerID" className="Buyer-input" />
+            </div>
+            <div className="form-group">
+              <label htmlFor="majorSetupCost">Major Setup Cost:</label>
+              <input type="number" id="majorSetupCost" className="Major_setup_cost" />
+            </div>
+          </form>
+
+ def get_grid_data_json(self, selected_hall, selected_pattern):
+        self.update_seat_grid(selected_hall, selected_pattern)
+        grid_data = self.get_grid_data(self.seat_grid_instance.seat_grid)
+        return json.dumps(grid_data)
+
+  {/* Conditionally render the CircularHall component when the selected pattern is "Circular" */}
+            {selectedPattern === 'Circular' ? (
+                <CircularHall seatData={gridData} />
+            ) :
+
+  onClick={handleLinkClick}
+
+    <>
+    {/* { result ? <Result result={result}/> : <p> Loading </p>} </> */};
+   </>
